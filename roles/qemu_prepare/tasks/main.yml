@@ -1,8 +1,0 @@
----
-- name: Check if the image has already been set up
-  shell: test -e {{ embedux_tmp }}/.done_qemu_prepare
-  register: prepared
-  ignore_errors: True
-
-- include: qemu_prepare.yml
-  when: prepared|failed

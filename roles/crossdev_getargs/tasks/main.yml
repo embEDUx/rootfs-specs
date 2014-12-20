@@ -1,4 +1,0 @@
----
-- name: Run script that estimates the crossdev arguments
-  script: getargs.sh
-  register: getargs_script
