@@ -3,12 +3,9 @@ global:
     kw:
       +: ["~arm"]
     use:
-      +: ["-doc"]
-      -: ["X"]
+      -: ["X","doc"]
 
 packages:
   app-emulation/docker:
-    kw:
-      +: ["~*"]
     use:
       +: ["btrfs","doc"]
