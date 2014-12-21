@@ -6,9 +6,6 @@ global:
       -: ["X","doc"]
 
 packages:
-  app-emulation/docker:
-    use:
-      +: ["btrfs","doc"]
   app-editors/vim: {}
   net-misc/ntp:
     use:
