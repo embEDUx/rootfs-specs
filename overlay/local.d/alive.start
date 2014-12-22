@@ -1,0 +1,2 @@
+#! /bin/bash
+echo It's alive >> /var/tmp/alive.log
