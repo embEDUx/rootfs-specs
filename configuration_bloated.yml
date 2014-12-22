@@ -1,14 +1,10 @@
 ---
 global:
     use:
-      +: "vim-syntax"
       -: "X doc"
 
 packages:
-  app-portage/eix: {}
-  app-portage/layman: {}
-  app-editors/vim: {}
-  net-misc/ntp: {}
-  sys-apps/iproute2: {}
-  net-analyzer/netcat: {}
-  net-wireless/iw: {}
+  net-wireless/gnuradio:
+    use:
+      +: "alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
+      -: "qt4"
