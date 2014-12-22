@@ -1,7 +1,7 @@
 ---
 global:
     kw:
-      +: "~arm"
+      +: "~arm vim-syntax"
     use:
       -: "X doc"
 
