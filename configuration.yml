@@ -6,6 +6,8 @@ global:
       -: ["X","doc"]
 
 packages:
+  app-portage/eix: {}
+  app-portage/layman: {}
   app-editors/vim: {}
   net-misc/ntp:
     use:
