@@ -11,5 +11,7 @@ packages:
     use:
       +: ["vim-syntax"]
   sys-apps/iproute2: {}
-  net-analyzer/netcat: {}
+  net-analyzer/netcat:
+    use:
+      +: ["crypt"]
   net-wireless/iw: {}
