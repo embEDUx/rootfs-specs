@@ -1,0 +1,19 @@
+---
+global:
+    kw:
+      +: "~arm"
+    use:
+      -: "X doc"
+
+packages:
+  app-portage/eix: {}
+  app-portage/layman: {}
+  app-editors/vim: {}
+  net-misc/ntp:
+    use:
+      +: "vim-syntax"
+  sys-apps/iproute2: {}
+  net-analyzer/netcat:
+    use:
+      +: "crypt"
+  net-wireless/iw: {}

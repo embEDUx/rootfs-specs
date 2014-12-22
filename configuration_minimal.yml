@@ -1,0 +1,10 @@
+---
+global:
+    kw:
+      +: "~arm"
+    use:
+      -: "X doc"
+
+packages:
+  app-portage/eix: {}
+  app-portage/layman: {}
