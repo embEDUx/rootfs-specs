@@ -1,1 +1,22 @@
-configuration_bloated.yml
+---
+global:
+    use:
+      +: "vim-syntax"
+      -: "X doc"
+
+packages:
+  app-portage/layman: {}
+  app-portage/eix: {}
+#  app-editors/vim: {}
+#  app-portage/genlop: {}
+#  net-misc/ntp: {}
+#  sys-apps/iproute2: {}
+#  net-analyzer/netcat: {}
+#  net-wireless/iw: {}
+
+pre_install_commands:
+  - "eix-sync"
+  - "eselect python set python2.7"
+
+post_install_commands:
+  - "echo 'y' | layman -f -o https://apu.in.htwg-konstanz.de/labworks-embEDUx/portage_overlay/raw/master/portage-embedux.xml -a portage-embedux"
