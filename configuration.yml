@@ -1,1 +1,10 @@
-configuration_bloated.yml
+---
+global:
+    use:
+      -: "X doc"
+
+packages:
+  net-wireless/gnuradio:
+    use:
+      +: "alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
+      -: "qt4"
