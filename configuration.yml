@@ -8,3 +8,4 @@ packages:
 
 post_install_command:
   - "rc-update add docker default"
+
