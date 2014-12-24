@@ -4,6 +4,9 @@ global:
       -: "X doc"
 
 packages:
+  dev-python/matplotlib:
+    kw:
+      +: "~*"
   net-wireless/gnuradio:
     kw:
       +: "~*"
