@@ -6,10 +6,10 @@ global:
 packages:
   dev-python/matplotlib:
     kw:
-      +: "~amd64"
+      +: "~arm"
   net-wireless/gnuradio:
     kw:
-      +: "~amd64"
+      +: "~arm"
     use:
       +: "alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
       -: "qt4"
