@@ -4,7 +4,7 @@ global:
       -: "X doc"
 
 packages:
-  "=dev-python/matplotlib-1.4.*": {}
+  ">=dev-python/matplotlib-1.4*": {}
   net-wireless/gnuradio:
     use:
       +: "alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
