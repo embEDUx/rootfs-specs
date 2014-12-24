@@ -2,6 +2,9 @@
 packages:
   app-emulation/docker:
     kw:
-      +: ["~*"]
+      +: "~arm"
     use:
-      +: ["btrfs","doc"]
+      +: "btrfs doc"
+
+post_install_command:
+  - "rc-update add docker default"
