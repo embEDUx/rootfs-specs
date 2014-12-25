@@ -6,7 +6,7 @@ global:
 packages:
   net-wireless/gnuradio:
     use:
-      +: "alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
+      +: "grc alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
       -: "qt4"
 
 pre_install_commands:
