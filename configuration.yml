@@ -4,12 +4,10 @@ global:
       -: "X doc"
 
 packages:
-  dev-python/matplotlib:
-    kw:
-      +: "~arm"
   net-wireless/gnuradio:
-    kw:
-      +: "~arm"
     use:
       +: "alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
       -: "qt4"
+
+pre_install_commands:
+  - "emerge --sync"
