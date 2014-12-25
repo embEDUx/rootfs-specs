@@ -1,1 +1,10 @@
-configuration_bloated.yml
+---
+packages:
+  app-emulation/docker:
+    kw:
+      +: "~arm"
+    use:
+      +: "btrfs doc"
+
+post_install_command:
+  - "rc-update add docker default"
