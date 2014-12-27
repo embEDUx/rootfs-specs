@@ -6,7 +6,7 @@ global:
 packages:
   dev-python/numpy:
     use:
-      -: "python_targets_3*"
+      -: "python_targets_python3*"
   
   net-wireless/gnuradio:
     use:
