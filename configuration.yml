@@ -1,7 +1,7 @@
 ---
 global:
     use:
-      -: "X doc"
+      -: "X doc python_targets_3_2 python_targets_3_3 python_targets_3_4"
 
 packages:
   net-wireless/gnuradio:
