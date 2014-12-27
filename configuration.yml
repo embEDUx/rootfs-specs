@@ -4,6 +4,10 @@ global:
       -: "X doc"
 
 packages:
+  dev-python/numpy:
+    use:
+      -: "python_targets_python3*"
+  
   net-wireless/gnuradio:
     use:
       +: "alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
