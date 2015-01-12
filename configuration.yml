@@ -4,6 +4,7 @@ global:
     -: "X doc"
 
 packages:
+  app-admin/eselect-cblas: {}
   sci-libs/gsl:
     use:
       +: "cblas-external"
