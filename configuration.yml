@@ -4,6 +4,9 @@ global:
     -: "X doc"
 
 packages:
+  sci-libs/gsl:
+    use:
+      +: "cblas-external"
   net-wireless/gnuradio:
     use:
       +: "alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
