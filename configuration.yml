@@ -16,4 +16,4 @@ pre_install_commands:
   - "emerge --sync"
   - "chown -R portage:portage /usr/local/portage"
   - "echo 'PORTDIR_OVERLAY=\"/usr/local/portage ${PORTDIR_OVERLAY}\"' >> /etc/portage/make.conf"
-  - "find /usr/local/portage -name \"*.ebuild\" -exec ebuild {} manifest\;"
+  - "find /usr/local/portage -name \"*.ebuild\" -exec ebuild {} manifest \\;"
