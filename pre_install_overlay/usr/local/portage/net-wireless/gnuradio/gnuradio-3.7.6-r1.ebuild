@@ -142,7 +142,6 @@ src_configure() {
 		$(cmake-utils_use_enable jack GR_AUDIO_JACK) \
 		$(cmake-utils_use_enable log GR_LOG) \
 		$(cmake-utils_use_enable noaa GR_NOAA) \
-		$(cmake-utils_use_enable neon HAVE_MFPU_NEON) \
 		$(cmake-utils_use_enable oss GR_AUDIO_OSS) \
 		$(cmake-utils_use_enable pager GR_PAGER) \
 		$(cmake-utils_use_enable performance-counters ENABLE_PERFORMANCE_COUNTERS) \
@@ -162,6 +161,7 @@ src_configure() {
 		-DPYTHON_EXECUTABLE="${PYTHON}"
 	)
 	use vocoder && mycmakeargs+=( -DGR_USE_SYSTEM_LIBGSM=TRUE )
+	use neon || mycmakeargs+=( -DHAVE_MFPU_NEON=0 )
 	cmake-utils_src_configure
 }
 
