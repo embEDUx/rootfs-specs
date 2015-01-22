@@ -126,7 +126,7 @@ src_configure() {
 		-DENABLE_GR_BLOCKS=ON
 		-DENABLE_GR_FFT=ON
 		-DENABLE_GR_AUDIO=ON
-    -DHAVE_MFPU_NEON=0
+    -Dhave_mfpu_neon=0
 		$(cmake-utils_use_enable alsa GR_AUDIO_ALSA) \
 		$(cmake-utils_use_enable analog GR_ANALOG) \
 		$(cmake-utils_use_enable atsc GR_ATSC) \
