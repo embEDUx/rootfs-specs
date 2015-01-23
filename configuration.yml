@@ -1,22 +1,28 @@
 ---
 global:
     use:
-      +: "vim-syntax"
-      -: "X doc"
+      +: "X xinerama vim-syntax doc"
 
 packages:
   app-portage/layman: {}
   app-portage/eix: {}
   app-editors/vim: {}
   app-portage/genlop: {}
-  net-misc/ntp: {}
   sys-apps/iproute2: {}
   net-analyzer/netcat: {}
   net-wireless/iw: {}
-  sys-fs/btrfs-progs: {}
+  net-misc/x2goserver:
+    kw:
+      +: "~amd64"
+  mate-base/mate:
+    kw:
+      +: "~amd64"
+  www-client/firefox:
+    kw:
+      +: "~amd64"
 
 pre_install_commands:
   - "emerge --sync"
 
 post_install_commands:
-  - "echo 'y' | layman -f -o https://apu.in.htwg-konstanz.de/labworks-embEDUx/portage_overlay/raw/master/portage-embedux.xml -a portage-embedux"
+  - "eix-update"
