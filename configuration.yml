@@ -1,7 +1,7 @@
 ---
 global:
     use:
-      +: "X xinerama vim-syntax doc"
+      +: "X xinerama vim-syntax"
 
 packages:
   app-portage/layman: {}
