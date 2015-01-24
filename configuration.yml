@@ -15,5 +15,10 @@ packages:
   net-wireless/iw: {}
   sys-fs/btrfs-progs: {}
 
+pre_install_commands:
+  - "eix --sync"
+
 post_install_commands:
+  - "echo Europe/Berlin > /etc/timezone"
+  - "emerge --config timezone-data"
   - "echo 'y' | layman -f -o https://apu.in.htwg-konstanz.de/labworks-embEDUx/portage_overlay/raw/master/portage-embedux.xml -a portage-embedux"
