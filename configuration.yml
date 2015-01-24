@@ -11,6 +11,9 @@ packages:
   sys-apps/iproute2: {}
   net-analyzer/netcat: {}
   net-wireless/iw: {}
+  net-misc/openssl:
+    use:
+      -: "bindist"
   net-misc/openssh:
     use:
       -: "hpn bindist"
