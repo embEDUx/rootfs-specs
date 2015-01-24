@@ -11,6 +11,9 @@ packages:
   sys-apps/iproute2: {}
   net-analyzer/netcat: {}
   net-wireless/iw: {}
+  net-misc/openssh:
+    use:
+      -: "hpn bindist"
   net-misc/x2goserver:
     kw:
       +: "~amd64"
@@ -26,3 +29,4 @@ pre_install_commands:
 
 post_install_commands:
   - "eix-update"
+  - "x2godbadmin --createdb"
