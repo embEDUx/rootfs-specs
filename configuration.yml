@@ -16,7 +16,7 @@ packages:
   sys-fs/btrfs-progs: {}
 
 pre_install_commands:
-  - "eix --sync"
+  - "emerge --sync"
 
 post_install_commands:
   - "echo Europe/Berlin > /etc/timezone"
