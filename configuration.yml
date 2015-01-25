@@ -21,5 +21,4 @@ pre_install_commands:
 post_install_commands:
   - "echo Europe/Berlin > /etc/timezone"
   - "emerge --config timezone-data"
-  - "echo 'y' | layman -f -o https://apu.in.htwg-konstanz.de/labworks-embEDUx/portage_overlay/raw/master/portage-embedux.xml -a portage-embedux"
-
+#  - "echo 'y' | layman -f -o https://apu.in.htwg-konstanz.de/labworks-embEDUx/portage_overlay/raw/master/portage-embedux.xml -a portage-embedux"
