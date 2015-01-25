@@ -18,5 +18,5 @@ packages:
 pre_install_commands:
   - "emerge --sync"
 
-post_install_commands:
-  - "echo 'y' | layman -f -o https://apu.in.htwg-konstanz.de/labworks-embEDUx/portage_overlay/raw/master/portage-embedux.xml -a portage-embedux"
+#post_install_commands:
+#  - "echo 'y' | layman -f -o https://apu.in.htwg-konstanz.de/labworks-embEDUx/portage_overlay/raw/master/portage-embedux.xml -a portage-embedux"
