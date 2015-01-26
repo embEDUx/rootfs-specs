@@ -8,6 +8,9 @@ packages:
     use:
       +: "grc alsa analog audio channels ctrlport digital fec filter log pager performance-counters utils vocoder wavelet zeromq"
       -: "qt4"
+  net-wireless/gr-osmosdr:
+    use:
+      +: "rtlsdr hackrf fcd" 
 
 pre_install_commands:
   - "emerge --sync"
