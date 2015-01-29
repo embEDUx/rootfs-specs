@@ -2,9 +2,11 @@
 global:
     use:
       +: "vim-syntax"
-      -: "X doc"
+      -: "doc"
 
 packages:
+  =net-misc/freerdp-9999*: {}
+  x11-base/xorg-server: {}
   net-misc/x2goclient: {}
 
 pre_install_commands:
