@@ -14,6 +14,7 @@ packages:
   net-wireless/gr-osmosdr:
     use:
       +: "rtlsdr hackrf fcd" 
+  net-wireless/rtl-sdr: {}
 
 pre_install_commands:
   - "emerge --sync"
