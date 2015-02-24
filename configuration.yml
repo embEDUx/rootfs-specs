@@ -1,25 +1,25 @@
 ---
 global:
     use:
-      +: "vim-syntax"
-      -: "X doc"
+        +: "vim-syntax"
+        -: "X doc"
 
 packages:
-  app-portage/layman: {}
-  app-portage/eix: {}
-  app-editors/vim: {}
-  app-portage/genlop: {}
-  net-misc/ntp: {}
-  sys-apps/iproute2: {}
-  net-analyzer/netcat: {}
-  net-wireless/iw: {}
-  sys-fs/btrfs-progs: {}
-  dev-util/catalyst: 
-      use:
-          +use: "ccache"
+    app-portage/layman: {}
+    app-portage/eix: {}
+    app-editors/vim: {}
+    app-portage/genlop: {}
+    net-misc/ntp: {}
+    sys-apps/iproute2: {}
+    net-analyzer/netcat: {}
+    net-wireless/iw: {}
+    sys-fs/btrfs-progs: {}
+    dev-util/catalyst: 
+        use:
+            +: "ccache"
 
 pre_install_commands:
-  - "emerge --sync"
+    - "emerge --sync"
 
 #post_install_commands:
 #  - "echo 'y' | layman -f -o https://apu.in.htwg-konstanz.de/labworks-embEDUx/portage_overlay/raw/master/portage-embedux.xml -a portage-embedux"
