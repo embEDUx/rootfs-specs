@@ -14,6 +14,9 @@ packages:
   net-analyzer/netcat: {}
   net-wireless/iw: {}
   sys-fs/btrfs-progs: {}
+  dev-util/catalyst: 
+      use:
+          +use: "ccache"
 
 pre_install_commands:
   - "emerge --sync"
