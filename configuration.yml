@@ -7,7 +7,8 @@ global:
 packages:
     virtual/udev: {}
     ">=sys-apps/systemd-219":
-        +use: "importd gcrypt curl lz4 lzma"
+        use: 
+            +: "importd gcrypt curl lz4 lzma"
     app-portage/layman: {}
     app-portage/eix: {}
     app-editors/vim: {}
