@@ -6,6 +6,10 @@ global:
 
 packages:
     virtual/udev: {}
+        kw:
+            +: "~amd64 ~x86"
+        use: 
+            +: "importd gcrypt curl lz4 lzma"
     sys-apps/systemd:
         kw:
             +: "~amd64 ~x86"
@@ -24,5 +28,6 @@ packages:
 pre_install_commands:
     - "emerge-webrsync"
     - "chown -R portage:portage /usr/portage"
-    - "emerge -1uvk perl"
-    - "perl-cleaner --reallyall -- -k"
+    - "emerge -1uvkb perl"
+    - "perl-cleaner --reallyall -- -kb"
+    - "USE='-systemd emerge' -1u sys-apps/util-linux"
