@@ -23,7 +23,8 @@ packages:
 
 pre_install_commands:
     - "chown -R portage:portage /usr/portage"
-    - "emerge --sync"
-    - "emerge -1uv perl"
+    - "emerge-webrsync"
+    - "chown -R portage:portage /usr/portage"
+    - "emerge -1uvk perl"
     - "perl-cleaner"
 
