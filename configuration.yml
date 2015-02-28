@@ -8,7 +8,7 @@ packages:
     virtual/udev: {}
     sys-apps/systemd:
         kw:
-            +: "~*"
+            +: "~amd64 ~x86"
         use: 
             +: "importd gcrypt curl lz4 lzma"
     app-portage/layman: {}
