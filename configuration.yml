@@ -22,9 +22,7 @@ packages:
     sys-fs/btrfs-progs: {}
 
 pre_install_commands:
-    - "chown -R portage:portage /usr/portage"
     - "emerge-webrsync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvk perl"
     - "perl-cleaner --reallyall -- -k"
-
