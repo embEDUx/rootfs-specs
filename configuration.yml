@@ -5,6 +5,9 @@ global:
         -: "X doc consolekit"
 
 packages:
+    sys-apps/util-linux:
+        use:
+            -: "systemd"
     virtual/udev:
         kw:
             +: "~amd64 ~x86"
@@ -28,4 +31,3 @@ pre_install_commands:
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
     - "perl-cleaner --reallyall -- -kb"
-    - "USE='-systemd' emerge -1Nv sys-apps/util-linux"
