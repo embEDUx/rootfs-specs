@@ -26,5 +26,5 @@ pre_install_commands:
     - "emerge-webrsync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvk perl"
-    - "perl-cleaner"
+    - "perl-cleaner --reallyall -- -k"
 
