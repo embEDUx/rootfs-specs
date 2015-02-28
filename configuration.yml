@@ -1,24 +1,37 @@
----
 global:
     use:
-      +: "vim-syntax"
-      -: "X doc"
+        +: "vim-syntax systemd"
+        -: "X doc consolekit"
 
 packages:
-  app-portage/layman: {}
-  app-portage/eix: {}
-  app-editors/vim: {}
-  app-portage/genlop: {}
-  net-misc/ntp: {}
-  sys-apps/iproute2: {}
-  net-analyzer/netcat: {}
-  net-wireless/iw: {}
-  sys-fs/btrfs-progs: {}
+    sys-apps/util-linux:
+        use:
+            -: "systemd"
+    virtual/udev:
+        kw:
+            +: "~arm"
+    sys-apps/systemd:
+        kw:
+            +: "~arm"
+        use: 
+            +: "importd gcrypt curl lz4 lzma"
+    app-portage/layman: {}
+    app-portage/eix: {}
+    app-editors/vim: {}
+    app-portage/genlop: {}
+    net-misc/ntp: {}
+    sys-apps/iproute2: {}
+    net-analyzer/netcat: {}
+    net-wireless/iw: {}
+    sys-fs/btrfs-progs: {}
 
 pre_install_commands:
-  - "emerge --sync"
+    - "emerge-webrsync"
+    - "chown -R portage:portage /usr/portage"
+    - "emerge -1uvkb perl"
+    - "perl-cleaner --reallyall -- -kb"
 
 post_install_commands:
-  - "echo Europe/Berlin > /etc/timezone"
-  - "emerge --config timezone-data"
-#  - "echo 'y' | layman -f -o https://apu.in.htwg-konstanz.de/labworks-embEDUx/portage_overlay/raw/master/portage-embedux.xml -a portage-embedux"
+    - "echo Europe/Berlin > /etc/timezone"
+    - "emerge --config timezone-data"
+
