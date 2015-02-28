@@ -5,11 +5,9 @@ global:
         -: "X doc consolekit"
 
 packages:
-    virtual/udev: {}
+    virtual/udev:
         kw:
             +: "~amd64 ~x86"
-        use: 
-            +: "importd gcrypt curl lz4 lzma"
     sys-apps/systemd:
         kw:
             +: "~amd64 ~x86"
