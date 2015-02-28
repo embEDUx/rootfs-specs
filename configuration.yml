@@ -1,10 +1,13 @@
 ---
 global:
     use:
-        +: "vim-syntax"
-        -: "X doc"
+        +: "vim-syntax systemd"
+        -: "X doc consolekit"
 
 packages:
+    virtual/udev: {}
+    ">=sys-apps/systemd-219":
+        +use: "importd gcrypt curl lz4 lzma"
     app-portage/layman: {}
     app-portage/eix: {}
     app-editors/vim: {}
@@ -14,9 +17,6 @@ packages:
     net-analyzer/netcat: {}
     net-wireless/iw: {}
     sys-fs/btrfs-progs: {}
-    dev-util/catalyst: 
-        use:
-            +: "ccache"
 
 pre_install_commands:
     - "emerge --sync"
