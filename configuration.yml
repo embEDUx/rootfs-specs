@@ -10,10 +10,10 @@ packages:
             -: "systemd"
     virtual/udev:
         kw:
-            +: "~amd64 ~x86"
+            +: "~arm"
     sys-apps/systemd:
         kw:
-            +: "~amd64 ~x86"
+            +: "~arm"
         use: 
             +: "importd gcrypt curl lz4 lzma"
     app-portage/layman: {}
