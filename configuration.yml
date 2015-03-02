@@ -34,4 +34,5 @@ pre_install_commands:
 post_install_commands:
     - "echo Europe/Berlin > /etc/timezone"
     - "emerge --config timezone-data"
-
+    - "mv /sbin/init /sbin/init-openrc"
+    - "ln -sf /usr/lib/systemd/systemd /sbin/init"
