@@ -31,3 +31,9 @@ pre_install_commands:
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
     - "perl-cleaner --reallyall -- -kb"
+
+post_install_commands:
+    - "echo Europe/Berlin > /etc/timezone"
+    - "emerge --config timezone-data"
+    - "mv /sbin/init /sbin/init-openrc"
+    - "ln -sf /usr/lib/systemd/systemd /sbin/init"
