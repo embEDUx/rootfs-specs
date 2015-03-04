@@ -30,6 +30,7 @@ packages:
     dev-util/sysdig: {}
 
 pre_install_commands:
+    - 'pushd /usr/src/linux make oldconfig; make modules_prepare; popd'
     - "emerge-webrsync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
