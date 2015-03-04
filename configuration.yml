@@ -27,11 +27,12 @@ packages:
     sys-fs/btrfs-progs: {}
     sys-apps/usbutils: {}
     sys-apps/usbmon: {}
-    dev-util/sysdig: {}
+    '=dev-util/sysdig-0.1.98': {}
+
 
 pre_install_commands:
     - 'pushd /usr/src/linux make olddefconfig; make modules_prepare; popd'
-    - "emerge-webrsync"
+    - "emerge --sync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
     - "perl-cleaner --reallyall -- -kb"
