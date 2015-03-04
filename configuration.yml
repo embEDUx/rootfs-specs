@@ -27,7 +27,7 @@ packages:
     sys-fs/btrfs-progs: {}
     sys-apps/usbutils: {}
     sys-apps/usbmon: {}
-    dev-util/sysdig: {}
+    dev-util/sysdig:
         kw:
             +: "~arm"
 
