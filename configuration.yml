@@ -28,9 +28,13 @@ packages:
     sys-apps/usbutils: {}
     sys-apps/usbmon: {}
     dev-util/sysdig: {}
+        kw:
+            +: "~arm"
 
 pre_install_commands:
-    - "emerge-webrsync"
+    - "wget http://moe.in.htwg-konstanz.de:8010/linux/qemu-virt-arm/latest.config -O /usr/src/linux/.config"
+    - "pushd /usr/src/linux; make olddefconfig; make modules_prepare; popd;"
+    - "emerge --sync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
     - "perl-cleaner --reallyall -- -kb"
