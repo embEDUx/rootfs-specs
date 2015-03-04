@@ -25,6 +25,9 @@ packages:
     net-analyzer/netcat: {}
     net-wireless/iw: {}
     sys-fs/btrfs-progs: {}
+    sys-apps/usbutils: {}
+    sys-apps/usbmon: {}
+    dev-util/sysdig: {}
 
 pre_install_commands:
     - "emerge-webrsync"
