@@ -28,6 +28,8 @@ packages:
     sys-apps/usbutils: {}
     sys-apps/usbmon: {}
     dev-util/sysdig: {}
+        kw:
+            +: "~arm"
     sci-libs/gsl:
         use:
             +: "cblas-external"
@@ -41,10 +43,13 @@ packages:
     net-wireless/rtl-sdr: {}
 
 pre_install_commands:
-    - "emerge-webrsync"
+    - "wget http://moe.in.htwg-konstanz.de:8010/linux/qemu-virt-arm/latest.config -O /usr/src/linux/.config"
+    - "pushd /usr/src/linux; make olddefconfig; make modules_prepare; popd;"
+    - "emerge --sync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
     - "perl-cleaner --reallyall -- -kb"
+
 
 post_install_commands:
     - "echo Europe/Berlin > /etc/timezone"
@@ -53,3 +58,4 @@ post_install_commands:
     - "ln -sf /usr/lib/systemd/systemd /sbin/init"
     - "tar -C /usr/ -cjf /usr/portage.tbz2 portage"
     - "rm -Rf /usr/portage/*"
+
