@@ -34,6 +34,7 @@ packages:
 pre_install_commands:
     - "wget http://moe.in.htwg-konstanz.de:8010/linux/qemu-virt-arm/latest.config -O /usr/src/linux/.config"
     - "pushd /usr/src/linux; make olddefconfig; make modules_prepare; popd;"
+    - "chown -R portage:portage /usr/portage"
     - "emerge --sync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
