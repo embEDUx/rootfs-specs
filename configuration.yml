@@ -10,10 +10,10 @@ packages:
             -: "systemd"
     virtual/udev:
         kw:
-            +: "~amd64 ~x86"
+            +: "~arm"
     sys-apps/systemd:
         kw:
-            +: "~amd64 ~x86"
+            +: "~arm"
         use: 
             +: "importd gcrypt curl lz4 lzma"
     app-portage/layman: {}
@@ -25,6 +25,9 @@ packages:
     net-analyzer/netcat: {}
     net-wireless/iw: {}
     sys-fs/btrfs-progs: {}
+    sys-apps/usbutils: {}
+    sys-apps/usbmon: {}
+    dev-util/sysdig: {}
 
 pre_install_commands:
     - "emerge-webrsync"
