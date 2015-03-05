@@ -2,7 +2,7 @@
 global:
     use:
         +: "vim-syntax systemd"
-        -: "X doc consolekit"
+        -: "X doc consolekit modules"
 
 packages:
     sys-apps/util-linux:
