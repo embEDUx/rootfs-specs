@@ -34,8 +34,6 @@ packages:
 
 
 pre_install_commands:
-    - 'pushd /usr/src/linux make olddefconfig; make -j8 modules; make modules_install; popd'
-    - "chown -R portage:portage /usr/portage"
     - "emerge --sync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
