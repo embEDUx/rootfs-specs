@@ -44,4 +44,3 @@ post_install_commands:
     - "emerge --config timezone-data"
     - "mv /sbin/init /sbin/init-openrc"
     - "ln -sf /usr/lib/systemd/systemd /sbin/init"
-
