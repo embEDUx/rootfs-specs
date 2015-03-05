@@ -28,7 +28,7 @@ packages:
     sys-apps/usbutils: {}
     sys-apps/usbmon: {}
 
-    # needed by sysdig. see: 
+    # needed by sysdig. see: https://bugs.gentoo.org/show_bug.cgi?id=542248
     =dev-libs/jsoncpp-0.6*: {}
     dev-util/sysdig: {}
 
@@ -48,3 +48,4 @@ post_install_commands:
     - "ln -sf /usr/lib/systemd/systemd /sbin/init"
     - "tar -C /usr/ -cjf /usr/portage.tbz2 portage"
     - "rm -Rf /usr/portage/*"
+
