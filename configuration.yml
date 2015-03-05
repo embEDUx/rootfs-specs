@@ -27,12 +27,14 @@ packages:
     sys-fs/btrfs-progs: {}
     sys-apps/usbutils: {}
     sys-apps/usbmon: {}
+
+    # needed by sysdig. see: 
     =dev-libs/jsoncpp-0.6*: {}
     dev-util/sysdig: {}
 
 
 pre_install_commands:
-    - 'pushd /usr/src/linux make olddefconfig; make modules_prepare; popd'
+    - 'pushd /usr/src/linux make olddefconfig; make -j8 modules; make modules_install; popd'
     - "chown -R portage:portage /usr/portage"
     - "emerge --sync"
     - "chown -R portage:portage /usr/portage"
