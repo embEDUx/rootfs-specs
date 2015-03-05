@@ -2,7 +2,7 @@
 global:
     use:
         +: "vim-syntax systemd"
-        -: "X doc consolekit"
+        -: "X doc consolekit modules"
 
 packages:
     sys-apps/util-linux:
@@ -32,9 +32,6 @@ packages:
             +: "~arm"
 
 pre_install_commands:
-    - "wget http://moe.in.htwg-konstanz.de:8010/linux/qemu-virt-arm/latest.config -O /usr/src/linux/.config"
-    - "pushd /usr/src/linux; make olddefconfig; make modules_prepare; popd;"
-    - "chown -R portage:portage /usr/portage"
     - "emerge --sync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
