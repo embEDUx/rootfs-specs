@@ -24,7 +24,7 @@ packages:
     sys-apps/iproute2: {}
     net-analyzer/netcat: {}
     net-wireless/iw: {}
-    sys-fs/btrfs-progs: {}
+    sys-fs/btrfs-progs:
         kw:
             +: "~amd64 ~x86"
     sys-apps/usbutils: {}
@@ -52,3 +52,4 @@ post_install_commands:
     - "emerge --config timezone-data"
     - "mv /sbin/init /sbin/init-openrc"
     - "ln -sf /usr/lib/systemd/systemd /sbin/init"
+
