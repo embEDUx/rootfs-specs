@@ -25,6 +25,8 @@ packages:
     net-analyzer/netcat: {}
     net-wireless/iw: {}
     sys-fs/btrfs-progs: {}
+        kw:
+            +: "~arm"
     sys-apps/usbutils: {}
     sys-apps/usbmon: {}
     dev-util/sysdig:
@@ -43,6 +45,7 @@ packages:
     net-wireless/rtl-sdr: {}
 
 pre_install_commands:
+    - "gcc-config $(gcc-config -l | wc -l)"
     - "emerge --sync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
@@ -50,6 +53,7 @@ pre_install_commands:
 
 
 post_install_commands:
+    - "emerge --keep-going --wity-bdeps=y -DNuv @world || true"
     - "echo Europe/Berlin > /etc/timezone"
     - "emerge --config timezone-data"
     - "mv /sbin/init /sbin/init-openrc"
