@@ -1,7 +1,7 @@
 ---
 global:
     use:
-        +: "vim-syntax systemd"
+        +: "btrfs vim-syntax systemd"
         -: "X doc consolekit modules"
 
 packages:
@@ -25,6 +25,8 @@ packages:
     net-analyzer/netcat: {}
     net-wireless/iw: {}
     sys-fs/btrfs-progs: {}
+        kw:
+            +: "~amd64 ~x86"
     sys-apps/usbutils: {}
     sys-apps/usbmon: {}
     sys-apps/pciutils: {}
@@ -36,12 +38,16 @@ packages:
 
 
 pre_install_commands:
+    - "gcc-config $(gcc-config -l | wc -l)"
     - "emerge --sync"
     - "chown -R portage:portage /usr/portage"
     - "emerge -1uvkb perl"
     - "perl-cleaner --reallyall -- -kb"
 
 post_install_commands:
+    - "eix-update"
+    - "flaggie sys-apps/util-linux %use::systemd || true"
+    - "emerge --keep-going --wity-bdeps=y -DNuv @world || true"
     - "echo Europe/Berlin > /etc/timezone"
     - "emerge --config timezone-data"
     - "mv /sbin/init /sbin/init-openrc"
