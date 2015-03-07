@@ -47,7 +47,7 @@ pre_install_commands:
 post_install_commands:
     - "eix-update"
     - "flaggie sys-apps/util-linux %use::systemd || true"
-    - "emerge --keep-going --wity-bdeps=y -DNuv @world || true"
+    - "emerge @world -DNuv --keep-going=y --with-bdeps=y || true"
     - "echo Europe/Berlin > /etc/timezone"
     - "emerge --config timezone-data"
     - "mv /sbin/init /sbin/init-openrc"
