@@ -2,7 +2,7 @@
 global:
     use:
         +: "vim-syntax systemd"
-        -: "X doc consolekit"
+        -: "X doc consolekit modules"
 
 packages:
     sys-apps/util-linux:
@@ -27,7 +27,7 @@ packages:
     sys-fs/btrfs-progs: {}
     sys-apps/usbutils: {}
     sys-apps/usbmon: {}
-    dev-util/sysdig: {}
+    dev-util/sysdig:
         kw:
             +: "~arm"
     sci-libs/gsl:
