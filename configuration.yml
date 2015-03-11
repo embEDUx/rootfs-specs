@@ -47,7 +47,6 @@ post_install_commands:
     - "mv /sbin/init /sbin/init-openrc"
     - "ln -sf /usr/lib/systemd/systemd /sbin/init"
     - "systemctl enable sshd"
-    - "systemctl enable systemd-networkd"
     - "systemctl enable systemd-resolved"
     - "rm -f /etc/resolv.conf"
     - "ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf"
