@@ -1,10 +1,11 @@
 ---
 packages:
-  app-emulation/docker:
-    kw:
-      +: "~arm"
-    use:
-      +: "btrfs doc"
+    app-emulation/docker:
+        kw:
+            +: "~arm"
+        use:
+            +: "btrfs contrib doc"
+            -: "device-mapper"
 
 post_install_command:
-  - "rc-update add docker default"
+    - "rc-update add docker default"
